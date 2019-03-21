@@ -1,8 +1,8 @@
 AFRAME.registerComponent('map', {
 
     init: function() {
-        const animatedMarker = document.querySelector("#marker");
-        const aEntity = document.querySelector("#model");
+        const animatedMarker = document.getElementById("marker");
+        const aEntity = document.getElementById("model");
 
         // every click, we make our model grow in size :)
         animatedMarker.addEventListener('click', function(ev, target){
