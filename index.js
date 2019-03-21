@@ -14,7 +14,6 @@ AFRAME.registerComponent('map', {
         });
 }});
 
-document.querySelector("button").addEventListener("click", (e)=> {
-    document.getElementById("button").style.backgroundColor = "#2980B9";
-    console.log("button was pressed");
-  })
+function btnClicked() {
+    Console.log("btn was clicked");
+};
