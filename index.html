@@ -2,17 +2,23 @@
 <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
 <!-- include ar.js for A-Frame -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs> -->
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene embedded arjs>
+    -->
     <!-- create your content here. just a box for now -->
-    <a-image position="0 0 0" rotation="0 0 0" scale="4 2 1" src="Images/Map_Complete.png" event-set__makevisible="_event: mouseenter; visible: true"></a-image>
+    <a-image
+      position="0 0 0"
+      rotation="0 0 0"
+      scale="4 2 1"
+      src="Images/Map_Complete.png"
+      event-set__enter="_event: mouseenter; visible: true"
+      event-set__leave="_event: mouseleave; visible: false"
+      ></a-image
+    >
     <!-- <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  -->
     <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
+    <a-marker-camera preset="hiro"></a-marker-camera>
     <!-- <a-marker preset='custom' url='patterns/pattern-marker.patt'></a-marker> -->
     <!-- <a-marker preset='custom' type='pattern' url='https://isaacpeterson007.github.io/patterns/pattern-marker.patt'></a-marker> -->
   </a-scene>
 </body>
-
-
-
