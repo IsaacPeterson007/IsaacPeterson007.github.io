@@ -16,4 +16,8 @@ AFRAME.registerComponent('map', {
 
 document.querySelector("button").addEventListener("click", (e)=>{
 	console.log("HIDE OBJECTS")
-})
+});
+
+function btnClicked(){
+    console.log("btn pressed");
+}
