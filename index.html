@@ -6,16 +6,10 @@
 <script src="https://isaacpeterson007.github.io/index.js"></script>
 
 <script>
-    AFRAME.registerComponent("clicked", {
-    init: function() {
-      var button = document.querySelector('button');
-      button.value = "clicked!";
-      button.text="clicked!";
-      var map = document.querySelector('a-image');
-      map.src = "Images/Map_NoIcons.png";
-      this.el.addEventListener("click", (e)=>{console.log("HELLO")});
-    }})
-    </script>
+    document.querySelector('#model').addEventListener('click', function () {
+      console.log('I was clicked!');
+    });
+</script>
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
@@ -35,6 +29,11 @@
     <!-- <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  -->
     <!-- define a camera which will move according to the marker position -->
     <a-marker-camera map id="marker" preset="hiro">
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+            position="0 0 -5"
+            geometry="primitive: ring"
+            material="color: white; shader: flat">
+        </a-entity>
     </a-marker-camera>
   </a-scene>
 </body>
