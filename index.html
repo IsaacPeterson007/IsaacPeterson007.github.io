@@ -4,29 +4,31 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <!-- include index.js obviously... -->
 <script src="https://isaacpeterson007.github.io/index.js"></script>
+
 <script>
+
   var btnClicked = false;
+  AFRAME.registerComponent('clicked', {
+    init: function () {
+      //get btn
+      var button = document.querySelector('btn');
 
-  function clicked(btn){
-    if(!btnClicked){
-        var map = document.getElementById("model");
-        map.src = "Images/Map_NoIcons.png";
-        btn.textContext = "Map with no icons";
+      //change text
+      if(!btnClicked){
+        button.value = "map with no icons";
         btnClicked = !btnClicked;
-    }
-    else{
-        var map = document.getElementById("model");
-        map.src = "Images/Map_Complete.png";
-        btn.textContext = "Map with icons";
+      }
+      else{
+        button.value = "map with icons";
         btnClicked = !btnClicked;
+      }
     }
-}
+  });
 </script>
-
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" onClick="clicked(this)">
+    <button id="btn" onClick="clicked">
       Maps with Icons
     </button>
   </div>
