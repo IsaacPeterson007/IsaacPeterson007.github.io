@@ -8,7 +8,10 @@
 <script>
   var btnClicked = false;
   AFRAME.registerComponent('clicked', {
+    schema: {type: 'string'},
+
     init: function () {
+      
       //get btn
       var button = document.querySelector('btn');
 
@@ -27,9 +30,7 @@
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" clicked>
-      Map with Icons
-    </button>
+    <button id="btn" text="maps with icons" clicked="test" ></button>
   </div>
 
   <a-scene embedded arjs>
