@@ -8,7 +8,10 @@
 <script>
     AFRAME.registerComponent("clicked", {
     init: function() {
-    this.el.addEventListener("click", (e)=>{console.log("HELLO")})
+      var button = document.querySelector('button');
+      button.value = "clicked!";
+      button.text="clicked!";
+      this.el.addEventListener("click", (e)=>{console.log("HELLO")});
     }})
     </script>
 
