@@ -3,10 +3,15 @@
 <!-- include ar.js for A-Frame -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <!-- include index.js obviously... -->
+<script src="https://isaacpeterson007.github.io/index.js"></script>
 
-<button id="btn" text="Map with Icons" onClick="click"></button>
 
 <body style="margin : 0px; overflow: hidden;">
+  <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
+    <button id="btn" onClick="clicked">
+      Map with Icons
+    </button>
+  </div>
 
   <a-scene embedded arjs>
     <!-- create your content here. just a box for now -->
@@ -15,12 +20,14 @@
       position="0 0 0"
       rotation="0 0 0"
       scale="4 2 1"
-      src="Images/Map_Complete.png">
-    </a-image>
+      src="Images/Map_Complete.png"
+
+    ></a-image>
 
     <!-- <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  -->
     <!-- define a camera which will move according to the marker position -->
     <a-marker-camera map id="marker" preset="hiro">
+      <cursor color="#FDFEFE"></cursor>
     </a-marker-camera>
 
     <!-- <a-marker preset='custom' url='patterns/pattern-marker.patt'></a-marker> -->
