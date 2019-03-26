@@ -9,13 +9,13 @@
 <script>
 // `click` event emitted by browser on mouse click.
 document.querySelector('#model').addEventListener('click', function (evt) {
-  console.log('This 2D element was clicked!');
+    document.querySelector('#model').src = "Images/Map_NoIcons.png";
 });
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" clicked>Click Me</button>
+    <button id="btn" clicked>Clicks Me</button>
   </div>
 
   <a-scene cursor="rayOrigin: mouse">
