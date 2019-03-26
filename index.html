@@ -8,14 +8,31 @@
 
 <script>
 // `click` event emitted by browser on mouse click.
-document.querySelector('#model').addEventListener('click', function (evt) {
-    document.querySelector('#model').src = "Images/Map_NoIcons.png";
-});
+// document.querySelector('#model').addEventListener('click', function (evt) {
+//     var map = document.querySelector('#model');
+//     console.log(map.src);
+//     map.src = "Images/Map_NoIcons.png";
+// });
+
+AFRAME.registerComponent('changeMap', {
+
+    init: function () {
+      var el = this.el;  // <a-image>
+
+      el.addEventListener('mouseenter', function () {
+        el.setAttribute('src', "Images/Map_NoIcons.png");
+      });
+
+      el.addEventListener('mouseleave', function () {
+        el.setAttribute('src', "Images/Map_Complete.png");
+      });
+    }
+  });
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" clicked>Clicks Me</button>
+    <button id="btn" clicked>Click Me</button>
   </div>
 
   <a-scene cursor="rayOrigin: mouse">
@@ -25,7 +42,8 @@ document.querySelector('#model').addEventListener('click', function (evt) {
       position="0 0 0"
       rotation="0 0 0"
       scale="4 2 1"
-      src="Images/Map_Complete.png">
+      src="Images/Map_Complete.png"
+      changeMap>
     </a-image>
 
     <!-- <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  -->
