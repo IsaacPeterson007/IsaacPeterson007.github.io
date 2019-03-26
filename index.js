@@ -2,14 +2,15 @@ var btnClicked = false;
 
 function clicked(btn){
     if(!btnClicked){
-        //document.getElementById("btn").value = "Map with no icons";
-        btn.value = "Map with no icons";
+        var map = document.getElementById("model");
+        map.src = "Images/Map_NoIcons.png";
+        btn.textContext = "Map with no icons";
         btnClicked = !btnClicked;
     }
     else{
-        //document.getElementById("btn").value = "Map with icons";
-        btn.value = "Map with icons";
+        var map = document.getElementById("model");
+        map.src = "Images/Map_Complete.png";
+        btn.textContext = "Map with icons";
         btnClicked = !btnClicked;
     }
-        
 }
