@@ -15,7 +15,7 @@
 
 AFRAME.registerComponent('changeMap', {
 
-    init: function () {
+    update: function () {
       var el = this.el;  // <a-image>
       console.log("Chagne map init");
 
@@ -39,9 +39,9 @@ AFRAME.registerComponent('changeMap', {
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
-  <!-- <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
+  <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
     <button id="btn" changeMap>Clicks Me</button>
-  </div> -->
+  </div>
 
 
       <a-entity hello-world></a-entity>
