@@ -6,32 +6,9 @@
 <script src="https://isaacpeterson007.github.io/index.js"></script>
 
 <script>
-  var btnClicked = false;
-  AFRAME.registerComponent('clicked', {
-    schema: {type: 'string'},
-
-    init: function () {
-
-      //get btn
-      var button = document.querySelector('btn');
-      var map = document.querySelector('model');
-      console.log("button clicked function");
-
-      //change text
-      if(!btnClicked){
-        button.value = "map with no icons";
-        map.src = "Images/Map_NoIcons.png";
-        btnClicked = !btnClicked;
-        console.log("button inside false");
-      }
-      else{
-        button.value = "map with icons";
-        map.src = "Images/Map_Complete.png";
-        btnClicked = !btnClicked;
-        console.log("button inside true");
-      }
-    }
-  });
+  document.querySelector('btn').addEventListener('click', function (evt) {
+  console.log('This 2D element was clicked!');
+});
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
