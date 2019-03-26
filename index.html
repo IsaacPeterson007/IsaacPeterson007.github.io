@@ -19,6 +19,10 @@ AFRAME.registerComponent('changeMap', {
     init: function () {
       var el = this.el;  // <a-image>
 
+      var map = document.querySelector('#model');
+      map.src = "Images/Map_NoIcons.png";
+      map.setAttribute('src', "Images/Map_NoIcons.png");
+
       el.addEventListener('mouseenter', function () {
         el.setAttribute('src', "Images/Map_NoIcons.png");
         el.src = "Images/Map_NoIcons.png";
