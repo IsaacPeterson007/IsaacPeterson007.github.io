@@ -11,17 +11,20 @@
     schema: {type: 'string'},
 
     init: function () {
-      
+
       //get btn
       var button = document.querySelector('btn');
+      var map = document.querySelector('model');
 
       //change text
       if(!btnClicked){
-        button.text = "map with no icons";
+        button.value = "map with no icons";
+        map.src = "Images/Map_NoIcons.png";
         btnClicked = !btnClicked;
       }
       else{
-        button.text = "map with icons";
+        button.value = "map with icons";
+        map.src = "Images/Map_Complete.png";
         btnClicked = !btnClicked;
       }
     }
