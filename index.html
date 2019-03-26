@@ -15,17 +15,20 @@
       //get btn
       var button = document.querySelector('btn');
       var map = document.querySelector('model');
+      console.log("button clicked function");
 
       //change text
       if(!btnClicked){
         button.value = "map with no icons";
         map.src = "Images/Map_NoIcons.png";
         btnClicked = !btnClicked;
+        console.log("button inside false");
       }
       else{
         button.value = "map with icons";
         map.src = "Images/Map_Complete.png";
         btnClicked = !btnClicked;
+        console.log("button inside true");
       }
     }
   });
