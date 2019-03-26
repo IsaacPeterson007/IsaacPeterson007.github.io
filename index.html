@@ -7,12 +7,11 @@
 <script src="https://isaacpeterson007.github.io/index.js"></script>
 
 <script>
-// `click` event emitted by browser on mouse click.
-// document.querySelector('#model').addEventListener('click', function (evt) {
-//     var map = document.querySelector('#model');
-//     console.log(map.src);
-//     map.src = "Images/Map_NoIcons.png";
-// });
+  AFRAME.registerComponent('hello-world', {
+    init: function () {
+      console.log('Hello, World!');
+    }
+  });
 
 AFRAME.registerComponent('changeMap', {
 
@@ -39,12 +38,16 @@ AFRAME.registerComponent('changeMap', {
 </script>
 
 <body style="margin : 0px; overflow: hidden;">
-  <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
+  <!-- <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
     <button id="btn" changeMap>Clicks Me</button>
-  </div>
+  </div> -->
 
-  <a-scene cursor="rayOrigin: mouse">
-    <!-- create your content here. just a box for now -->
+  <a-scene>
+      <a-entity hello-world></a-entity>
+    </a-scene>
+
+  <!-- <a-scene cursor="rayOrigin: mouse">
+     create your content here. just a box for now 
     <a-image
       id="model"
       position="0 0 0"
@@ -54,14 +57,14 @@ AFRAME.registerComponent('changeMap', {
       changeMap>
     </a-image>
 
-    <!-- <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  -->
-    <!-- define a camera which will move according to the marker position -->
+    <a-box position='0 0.5 0' color='black' material='opacity: 0.5;'></a-box>  
+     define a camera which will move according to the marker position 
     <a-marker-camera map id="marker" preset="hiro">
-        <!-- <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
             position="0 0 -5"
             geometry="primitive: ring"
             material="color: white; shader: flat">
-        </a-entity> -->
+        </a-entity> 
     </a-marker-camera>
-  </a-scene>
+  </a-scene> -->
 </body>
