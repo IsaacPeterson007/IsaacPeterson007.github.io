@@ -21,10 +21,12 @@ AFRAME.registerComponent('changeMap', {
 
       el.addEventListener('mouseenter', function () {
         el.setAttribute('src', "Images/Map_NoIcons.png");
+        console.log("mouse entered");
       });
 
       el.addEventListener('mouseleave', function () {
         el.setAttribute('src', "Images/Map_Complete.png");
+        console.log("mouse left");
       });
     }
   });
@@ -32,7 +34,7 @@ AFRAME.registerComponent('changeMap', {
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" clicked>Click Me</button>
+    <button id="btn" changeMap>Clicks Me</button>
   </div>
 
   <a-scene cursor="rayOrigin: mouse">
