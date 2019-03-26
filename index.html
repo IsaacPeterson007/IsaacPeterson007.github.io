@@ -6,17 +6,18 @@
 <script src="https://isaacpeterson007.github.io/index.js"></script>
 
 <script>
-  document.querySelector('btn').addEventListener('click', function (evt) {
-  console.log('This 2D element was clicked!');
-});
-</script>
+    AFRAME.registerComponent("clicked", {
+    init: function() {
+    this.el.addEventListener("click", (e)=>{console.log("HELLO")})
+    }})
+    </script>
 
 <body style="margin : 0px; overflow: hidden;">
   <div style="position: fixed; top: 40px; width:100%; text-align: center; z-index: 1;">
-    <button id="btn" >Click Me</button>
+    <button id="btn" clicked>Click Me</button>
   </div>
 
-  <a-scene embedded arjs>
+  <a-scene embedded arjs  cursor="rayOrigin: mouse">
     <!-- create your content here. just a box for now -->
     <a-image
       id="model"
